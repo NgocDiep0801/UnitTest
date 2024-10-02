@@ -25,7 +25,7 @@ namespace UnitTestProject1
             }
             return total;
         }
-        public static double Rainfall_Avg(int totalRainfall)
+        public static double Rainfall_Avg(int totalRainfall, int[] monthlyRainfall)
         {   
             var avg = 0.0;
             return totalRainfall / monthlyRainfall.Length;

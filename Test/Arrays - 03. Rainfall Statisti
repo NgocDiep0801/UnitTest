@@ -1,0 +1,91 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using UnitTestProject1;
+
+namespace sampleCode
+{
+    [TestClass]
+    public class UnitTest1
+    {
+                [TestMethod]
+        public void TestRainfallTotal()
+        {
+            //Arrange
+            var length = 12;
+            //Act
+            int[] monthlyRainfall = Program.Rainfall_Statistics(length);
+            double totalRainfall = Program.Rainfall_Total(monthlyRainfall);            
+            //Assert
+            Assert.AreEqual(66, totalRainfall);
+        }
+
+        public void TestRainfall_Avg()
+        {
+            //Arrange
+            var lenght = 12;
+            var totalRainfall = 66;
+            //Act            
+            int[] monthlyRainfall = Program.Rainfall_Statistics(lenght);            
+            double avgRainfall = Program.Rainfall_Avg(totalRainfall, monthlyRainfall);
+            //Assert
+            Assert.AreEqual(5.5, avgRainfall);
+        }
+
+        public void TestRainfall_high()
+        {
+            //Arrange
+            var length = 12;
+            //Act
+            int[] monthlyRainfall = Program.Rainfall_Statistics(length);
+            int highRainfall = Program.Rainfall_high(monthlyRainfall);
+            //Assert
+            Assert.AreEqual(11, highRainfall);
+        }
+
+        public void TestRainfall_low()
+        {
+            //Arrange
+            var length = 12;
+            //Act
+            int[] monthlyRainfall = Program.Rainfall_Statistics(length);
+            int lowRainfall = Program.Rainfall_low(monthlyRainfall);
+            //Assert
+            Assert.AreEqual(0, lowRainfall);
+        }
+
+
+        [TestMethod]
+        public void TestChargeAccount()
+        {
+            const int rows = 3;
+            var cols = 6;
+            long[][] accounts = new long[rows][]{new long[] { 5658845, 4520125, 7895122, 8777541, 8451277, 1302850 },
+                new long[]{ 8080152, 4562555, 5552012, 5050552, 7825877, 1250255},
+                new long[]{ 1005231, 6545231, 3852085, 7576651, 7881200, 4581002 } };
+
+            Console.WriteLine("Please enter the account you're searcing for: ");
+            var account = long.Parse(Console.ReadLine());
+            var found = false;
+
+            for (int row = 0; row < rows; row++)
+            {
+                for (int col = 0; col < cols; col++)
+                {
+                    if (account == accounts[row][col])
+                    {
+                        found = true;
+                    }
+                }
+            }
+
+            if (found)
+            {
+                Assert.AreEqual(0, account);
+            }
+            else
+            {
+                Assert.AreEqual(0, account);
+            }
+        }       
+    }
+}

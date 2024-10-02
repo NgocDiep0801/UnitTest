@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Arrays___01.Total_Sales
+namespace UnitTestProject1
 {
     public class Program
     {

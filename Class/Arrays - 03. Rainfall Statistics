@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UnitTestProject1
+{
+    public class Program
+    {      
+        public static int[] Rainfall_Statistics(int length) {
+            var monthlyRainfall = new int [length];
+            for (int i = 0;i < length;i++)
+            {
+                monthlyRainfall[i] = i;
+            }
+            return monthlyRainfall;
+        }
+        public static double Rainfall_Total(int[] monthlyRainfall)
+        {
+            var total = 0.0;
+            for (int i = 0; i < monthlyRainfall.Length; i++)
+            {
+                total += monthlyRainfall[i];
+            }
+            return total;
+        }
+        public static double Rainfall_Avg(int totalRainfall, int length)
+        {   
+            var avg = 0.0;
+            return totalRainfall / avg;
+        }
+        public static int Rainfall_high(int[] monthlyRainfall)
+        {
+            var highest = monthlyRainfall[0];
+            for (int i = 1; i < monthlyRainfall.Length; i++)
+            {
+                if (highest < monthlyRainfall[i])
+                {
+                    highest = monthlyRainfall[i];
+                }
+            } 
+        return highest;
+        }
+
+        public static int Rainfall_low(int[] monthlyRainfall)
+        {
+            var lowRainfall = monthlyRainfall[0];
+            for (int i = 1; i < monthlyRainfall.Length; i++)
+            {
+                if (lowRainfall > monthlyRainfall[i])
+                {
+                    lowRainfall = monthlyRainfall[i];
+                }
+            }
+            return lowRainfall;
+        }             
+                   
+    }
+}

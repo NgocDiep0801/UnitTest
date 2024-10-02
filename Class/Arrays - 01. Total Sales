@@ -16,7 +16,7 @@ namespace UnitTestProject1
             {
                 Console.WriteLine("Please enter the sales for day {0}:", i + 1);
                 var sale = i;
-                sales[0] = sale;
+                sales[i] = sale;
                 total += sale;
             }
             Console.WriteLine("The total of your sales is: {0}", total);

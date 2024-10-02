@@ -1,0 +1,21 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using UnitTestProject1;
+
+namespace sampleCode
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void TestTotalSale()
+        {
+            //Arrange
+            var lenght = 7;
+            //Act
+            int total = Program.TotalSale(lenght);
+            //Assert
+            Assert.AreEqual(21, total);
+        }
+    }
+}

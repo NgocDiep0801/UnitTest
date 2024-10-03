@@ -1,0 +1,56 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using UnitTestProject1;
+
+namespace sampleCode
+{
+    [TestClass]
+    public class UnitTest1
+    {
+                [TestMethod]
+        public void TestNumTotal()
+        {
+            //Arrange
+            var length = 12;
+            //Act
+            double[] numbers = Program.Number_Analysis_Program(length);
+            double totalNum = Program.Num_Total(numbers);            
+            //Assert
+            Assert.AreEqual(66, totalNum);
+        }
+
+        public void TestNum_Avg()
+        {
+            //Arrange
+            var length = 12;
+            var totalNum = 66;
+            //Act            
+            double[] numbers = Program.Number_Analysis_Program(length);            
+            double avgNum = Program.Num_Avg(totalNum, numbers);
+            //Assert
+            Assert.AreEqual(5.5, avgNum);
+        }
+
+        public void TestNum_high()
+        {
+            //Arrange
+            var length = 12;
+            //Act
+            double[] numbers = Program.Number_Analysis_Program(length);
+            double highNum = Program.Num_high(numbers);
+            //Assert
+            Assert.AreEqual(11, highNum);
+        }
+
+        public void TestNum_low()
+        {
+            //Arrange
+            var length = 12;
+            //Act
+            double[] numbers = Program.Number_Analysis_Program(length);
+            double lowNum = Program.Num_low(numbers);
+            //Assert
+            Assert.AreEqual(0, lowNum);
+        }
+    }
+}

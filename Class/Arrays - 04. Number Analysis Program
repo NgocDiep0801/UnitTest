@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UnitTestProject1
+{
+    public class Program
+    {      
+        public static double[] Number_Analysis_Program(int length) {
+            var numbers = new double [length];
+            for (int i = 0;i < length;i++)
+            {
+                numbers[i] = i;
+            }
+            return numbers;
+        }
+        public static double Num_Total(double[] numbers)
+        {
+            var totalNum = 0.0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                totalNum += numbers[i];
+            }
+            return totalNum;
+        }
+        public static double Num_Avg(int totalNum, double[] numbers)
+        {   
+            var avg = 0.0;
+            return totalNum / numbers.Length;
+        }
+        public static double Num_high(double[] numbers)
+        {
+            var highNum = numbers[0];
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                if (highNum < numbers[i])
+                {
+                    highNum = numbers[i];
+                }
+            } 
+        return highNum;
+        }
+
+        public static double Num_low(double[] numbers)
+        {
+            var lowNum = numbers[0];
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                if (lowNum > numbers[i])
+                {
+                    lowNum = numbers[i];
+                }
+            }
+            return lowNum;
+        }         
+                  
+    }
+}
+

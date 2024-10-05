@@ -1,0 +1,37 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using UnitTestProject1;
+
+namespace sampleCode
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void TestFindDay()
+        {
+            int Numbers = 10;
+            int Num = Program.DayCalendar(Numbers);
+            Assert.AreEqual(31 , Num);
+        }
+        [TestMethod]
+        public void TestFindMonth() 
+        {
+            string Month = "July";
+            int Mon = Program.MonthCalendar(Month);
+            Assert.AreEqual(31, Mon);
+        }
+        [TestMethod]
+        public void TestFindNotMonth()
+        {
+            string Month = "A";
+            int Mon = Program.MonthCalendar(Month);
+            Assert.AreEqual(-1, Mon);
+        }
+
+    }
+
+}
+
+
+

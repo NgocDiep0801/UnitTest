@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UnitTestProject1
+{
+    public class Program
+    { 
+        
+        public static int DayCalendar (int Numbers)
+        {            
+            var numberOfDays = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            //Numbers -= 1;
+            return numberOfDays[--Numbers];            
+        }
+
+        public static int MonthCalendar (string month) {
+            var numberOfDays = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            var months = new string[]{"January","February","March", "April", "May", "June", "July","August",
+                 "September",  "October","November", "December"  };
+            int index = findmonth(months, month);
+            if (index == -1) {
+                return -1;
+            }
+            return numberOfDays[index];
+        }
+        public static int findmonth(string[] Months , string Month)
+        {
+            for (int i = 0; i < Months.Length; i++)
+            {
+                if (Months[i] == (Month))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+           
+    }
+}
+

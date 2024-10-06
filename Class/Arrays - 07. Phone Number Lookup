@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
+using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
+using System.Security.Cryptography;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UnitTestProject1
+{
+    public class Program
+    {
+        public static List<long> phonenum(char name)
+        {
+            var names = new string[] { "Deepjack", "Christina", "Aleah", "Tem", "Veselina", "Hale", "Chelle" };
+            var phoneNums = new long[]
+            {
+                3598811713, 3598820312, 3598876523, 3598865312, 3598892333, 3598854228, 3598856765
+            };
+            List<long> list = new List<long>(); //Mang luu gia tri tra ve           
+            foreach (var abc in names)
+            {
+                if (index(abc, name) != -1)
+                {
+                    list.Add(chuoi(names, abc)); // them phan tu dat vao mang luu                    
+                }
+            }
+            return list;
+        }
+
+        public static int chuoi(string[] names, string name) //Xac dinh vi tri trong mang
+        {
+            for (int i = 0; i < names.Length; i++)
+            {
+                if (names[i] == name) return i;
+            }
+            return -1;
+        }
+        public static int index(string name, char namee) // Tim char trong string
+        {
+            for (int i = 0; i < name.Length; i++)
+            {
+                if (name[i] == namee) return i;
+            }
+            return -1;
+        }
+    }
+}
+

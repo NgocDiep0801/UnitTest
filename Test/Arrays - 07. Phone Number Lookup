@@ -1,0 +1,35 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using UnitTestProject1;
+
+namespace sampleCode
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void Testphone()
+        {
+            char name = 'A';
+            var num = Program.phonenum(name);
+            Assert.AreEqual(1, num.Count);
+        }
+        [TestMethod]
+        public void Testphone2() {
+            char name = 'x';
+            var num = Program.phonenum(name);
+            Assert.AreEqual(0, num.Count);
+        }
+        [TestMethod]
+        public void Testphone3()
+        {
+            char name = 'e';
+            var num = Program.phonenum(name);
+            Assert.AreEqual(6, num.Count);
+        }
+    }
+
+}
+
+
+

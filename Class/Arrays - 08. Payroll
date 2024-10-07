@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
+using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
+using System.Security.Cryptography;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UnitTestProject1
+{
+    public class Program
+    {
+       public static double Money(int checkid, double checkhours, double checksalary)
+        {
+            int[] id = { 56588, 45201, 78951, 87775, 84512, 13028, 75804 };
+            double salary = 0.0;
+            double hours = 0.0;
+            double sum = 0.0;
+            
+            for (int i = 0; i < id.Length; i++) {
+                if (checkid == id[i]) {
+                    hours =  checkhours;
+                    salary = checksalary;
+                    sum = hours * salary;
+                    return sum;
+                }
+            }
+            return -1;
+        }
+    }
+}
+

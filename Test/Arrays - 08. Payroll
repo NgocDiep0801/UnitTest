@@ -1,0 +1,32 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using UnitTestProject1;
+
+namespace sampleCode
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void TestMoney() {
+            int id = 56588;
+            double hours = 3.5 ;
+            double salary = 1.5;
+            double sum = Program.Money(id, hours, salary);
+            Assert.AreEqual(5.25 , sum);
+        }
+        [TestMethod]
+        public void TestMoneyFail()
+        {
+            int id = 56558;
+            double hours = 3.5;
+            double salary = 1.5;
+            double sum = Program.Money(id, hours, salary);
+            Assert.AreEqual(-1, sum);
+        }
+    }
+
+}
+
+
+

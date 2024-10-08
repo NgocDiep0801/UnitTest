@@ -1,0 +1,48 @@
+namespace ConsoleApp5
+{
+
+    internal class Program
+    {
+        //BDAACABACDBCDADCCBDA
+        static void Main(string[] args)
+        {
+            char[] ketqua = { 'B', 'D', 'A', 'A', 'C', 'A', 'B', 'A', 'C', 'D', 'B', 'C', 'D', 'A', 'D', 'C', 'C', 'B', 'D', 'A' };
+            char[] dapan = new char[ketqua.Length];
+            Console.WriteLine("Enter your chooses");
+
+            for (int i = 0; i < ketqua.Length; i++)
+            {
+                dapan[i] = char.Parse(Console.ReadLine());
+            }
+
+            for (int i = 0; i < dapan.Length; i++)
+            {
+                if (check(dapan[i], ketqua) >= 15)
+                {
+                    Console.WriteLine("congratulations");
+                    Console.WriteLine(check(dapan[i], ketqua));
+                }
+            }
+            for (int j = 0; j < ketqua.Length; j++)
+            {
+                Console.WriteLine(checkout(dapan[j], ketqua[j]));
+            }
+        }
+
+
+        public static int check(char dapan, char[] ketqua)
+        {
+            int bo = 0;
+            for (int i = 0; i < ketqua.Length; i++)
+            {
+                if (dapan == ketqua[i]) bo++;
+            }
+            return bo;
+        }
+        public static char checkout(char dapan, char ketqua)
+        {
+            if ((dapan != ketqua)) { return ketqua; }
+            return ' ';
+        }
+    }
+}

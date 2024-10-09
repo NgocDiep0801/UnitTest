@@ -1,0 +1,30 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using UnitTestProject1;
+
+namespace sampleCode
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void TestPointTrue()
+        {
+            char[] answer = { 'B', 'D', 'A', 'A', 'C', 'A', 'B', 'A', 'C', 
+            'D', 'B', 'C', 'D', 'A', 'D', 'C', 'C', 'B', 'D', 'A' };
+            int checkoutrue = Program.checkoutrue(answer,Program.Ketqua());
+            Assert.AreEqual(20, checkoutrue);
+        }
+        public void TestPointFalse()
+        {
+            char[] answer = { 'B', 'D', 'A', 'A', 'C', 'A', 'B', 'A', 'C',
+            'D', 'B', 'C', 'D', 'A', 'D', 'C', 'C', 'B', 'D', 'A' };
+            int checkoufalse = Program.checkoutfalse(answer, Program.Ketqua());
+            Assert.AreEqual(0, checkoufalse);
+        }
+    }
+
+}
+
+
+

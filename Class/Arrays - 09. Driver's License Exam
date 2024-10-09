@@ -46,3 +46,49 @@ namespace ConsoleApp5
         }
     }
 }
+
+
+// Modify in accordance with unit test
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
+using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
+using System.Security.Cryptography;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UnitTestProject1
+{
+    public class Program
+    {
+        //BDAACABACDBCDADCCBDA
+        public static char[] Ketqua()
+        {
+            return  new char[] { 'B', 'D', 'A', 'A', 'C', 'A', 'B', 'A', 'C', 'D', 'B', 'C', 'D', 'A', 'D', 'C', 'C', 'B', 'D', 'A' };
+            
+        }
+        public static int checkoutrue(char[] answer, char[] Ketqua)
+        {
+            int at = 0;
+            for (int i = 0; i < Ketqua.Length; i++ )
+            {
+                if (answer[i] == Ketqua[i]) at++;
+            }
+            return at;        
+        }
+        public static int checkoutfalse(char[] answer, char [] Ketqua)
+        {
+            int af = 0;
+            for (int i = 0; i < Ketqua.Length; i++)
+            {
+                if (answer[i] == Ketqua[i]) af++;
+            }
+            return af;
+        }
+    }
+}
+
+

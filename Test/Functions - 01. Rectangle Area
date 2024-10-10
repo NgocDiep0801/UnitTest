@@ -1,0 +1,39 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using UnitTestProject1;
+
+namespace sampleCode
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void TestFalse1()
+        {
+            double width = -10;
+            double length = -10;
+            double Area = Program.Area(width, length);
+            Assert.AreEqual(0, Area);
+        }
+        [TestMethod]
+        public void TestFalse2()
+        {
+            double width = -10;
+            double length = 10;
+            double Area = Program.Area(width, length);
+            Assert.AreEqual(0, Area);
+        }
+        [TestMethod]
+        public void TestTrue()
+        {
+            double width = 10;
+            double length = 10;
+            double Area = Program.Area(width, length);
+            Assert.AreEqual(100, Area);
+        }
+    }
+
+}
+
+
+

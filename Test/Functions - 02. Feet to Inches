@@ -1,0 +1,30 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using UnitTestProject1;
+
+namespace sampleCode
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public void TestFalse1()
+        {
+            double feet = -45.5;
+            double Area = Program.Area(feet);
+            Assert.AreEqual(0, Area);
+        }
+        
+        [TestMethod]
+        public void TestTrue()
+        {
+            double feet = 45.5;
+            double Area = Program.Area(feet);
+            Assert.AreEqual(546, Area);
+        }
+    }
+
+}
+
+
+

@@ -1,0 +1,23 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using UnitTestProject1;
+
+namespace sampleCode
+{
+    [TestClass]
+    public class UnitTest1
+    {
+              
+        [TestMethod]
+        public void TestFalse()
+        {
+            int num = 500;
+            bool lucky = Program.Lucky(num);
+            Assert.AreEqual(false, lucky);
+        }
+    }
+
+}
+
+
+

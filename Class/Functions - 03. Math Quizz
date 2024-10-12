@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
+using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
+using System.Security.Cryptography;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UnitTestProject1
+{
+    public class Program
+    {
+        public static bool Lucky (int answer)
+        {
+            Random random = new Random();
+            int a = random.Next(1, 1000);
+            int b = random.Next(1, 1000);
+            if (a + b == answer) return true;
+            return false;
+        }
+
+    }
+}
+

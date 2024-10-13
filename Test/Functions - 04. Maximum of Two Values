@@ -1,0 +1,31 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using UnitTestProject1;
+
+namespace sampleCode
+{
+    [TestClass]
+    public class UnitTest1
+    {
+              
+        [TestMethod]
+        public void TestFindNumSecondBig()
+        {
+            int first = 500;
+            int second = 600;
+            int find = Program.FindNumBig(first, second);
+            Assert.AreEqual(600, find);
+        }
+        public void TestFindNumFirstBig()
+        {
+            int first = 500;
+            int second = 400;
+            int find = Program.FindNumBig(first, second);
+            Assert.AreEqual(400, find);
+        }
+    }
+
+}
+
+
+

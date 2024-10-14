@@ -1,0 +1,30 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Linq;
+using UnitTestProject1;
+
+namespace sampleCode
+{
+    [TestClass]
+    public class UnitTest1
+    {
+              
+        [TestMethod]
+        public void TestFalling_Distance_False()
+        {
+            int num = 12;
+            double[] distance = Program.Falling_Distance(num);
+            Assert.AreEqual(12, distance.Length );
+        }
+        public void TestFalling_Distance_True()
+        {
+            int num = -1;
+            double[] distance = Program.Falling_Distance(num);
+            Assert.AreEqual(null, distance.Length);
+        }
+    }
+
+}
+
+
+

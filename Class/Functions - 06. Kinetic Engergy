@@ -1,0 +1,33 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Linq;
+using UnitTestProject1;
+
+namespace sampleCode
+{
+    [TestClass]
+    public class UnitTest1
+    {
+              
+        [TestMethod]
+        public void TestFalling_Distance_True()
+        {
+            int velocity = 11;
+            int mass = 22;
+            double ans = Program.KineticEnergy(velocity, mass);
+            Assert.AreEqual(1331, ans );
+        }
+        [TestMethod]
+        public void TestFalling_Distance_False()
+        {
+            int velocity = -11;
+            int mass = -22;
+            double ans = Program.KineticEnergy(velocity, mass);
+            Assert.AreEqual(-1, ans);
+        }
+    }
+
+}
+
+
+

@@ -1,33 +1,24 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.Linq;
-using UnitTestProject1;
+using System.Runtime.InteropServices.ComTypes;
+using System.Security.Cryptography;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace sampleCode
+namespace UnitTestProject1
 {
-    [TestClass]
-    public class UnitTest1
+    public class Program
     {
-              
-        [TestMethod]
-        public void TestFalling_Distance_True()
+        public static double KineticEnergy(int velocity, int mass)
         {
-            int velocity = 11;
-            int mass = 22;
-            double ans = Program.KineticEnergy(velocity, mass);
-            Assert.AreEqual(1331, ans );
+            if (velocity < 0 || mass < 0)  return -1;
+            var kineticE = 0.5 * mass * (velocity * velocity);
+            return kineticE;
         }
-        [TestMethod]
-        public void TestFalling_Distance_False()
-        {
-            int velocity = -11;
-            int mass = -22;
-            double ans = Program.KineticEnergy(velocity, mass);
-            Assert.AreEqual(-1, ans);
-        }
+
     }
-
 }
-
-
 
